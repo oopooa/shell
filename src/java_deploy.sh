@@ -79,6 +79,7 @@ log "查找.jar文件"
 app_jar_file=$app_path/app.jar
 cd ${app_path}/
 
+tar -xf package.tgz
 # 寻找jar包, 复制当前目录下
 find ./ -maxdepth 5 -name "*.jar" -type f | xargs -i {} cp -rf {} ${app_path}/
 # 排除source.jar
