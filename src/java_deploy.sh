@@ -81,16 +81,16 @@ cd ${app_path}/
 
 tar -xf package.tgz
 # 寻找jar包, 复制当前目录下
-find ./ -maxdepth 5 -name "*.jar" -type f | xargs -i {} cp -rf {} ${app_path}/
+find ./ -maxdepth 5 -name "*.jar" -type f | xargs -I {} cp -rf {} ${app_path}/
 # 排除source.jar
-find ./ -name "*-sources.jar" -type f | xargs -i {} rm -rf {}
+find ./ -name "*-sources.jar" -type f | xargs -I {} rm -rf {}
 
 jar_num=$(find ./ -maxdepth 1 -name "*.jar" -type f | wc -l);
 if [ "$jar_num" -gt 1 ]; then
     log "解压构建包异常! 包含多个jar文件!";
     exit 1;
 fi
-find ./ -maxdepth 5 -name "*.jar" -type f | xargs -i {} cp -rf {} ${app_jar_file}
+find ./ -maxdepth 5 -name "*.jar" -type f | xargs -I {} cp -rf {} ${app_jar_file}
 
 # 处理docker -e
 str_docker_e=""
