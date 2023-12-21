@@ -26,6 +26,10 @@ if [[ ! ${docker_stop_time} ]]; then
     docker_stop_time=10;
 fi
 
+if [[ ! ${docker_image} ]]; then
+    docker_image=${DEFAULT_DOCKER_IMAGE}
+fi
+
 # ===================================== 函数定义 =====================================
 
 function log() {
