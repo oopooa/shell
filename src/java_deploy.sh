@@ -12,7 +12,6 @@ check_times=$check_times
 JAVA_OPTS=$JAVA_OPTS
 docker_run_memory=$DOCKER_RUN_MEMORY
 docker_stop_time=$DOCKER_STOP_TIME
-app_down_sleep=$APP_DOWN_SLEEP
 
 DEFAULT_DOCKER_IMAGE=$DEFAULT_DOCKER_IMAGE
 
